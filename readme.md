@@ -18,3 +18,9 @@ SpringBoot构建电商基础秒杀项目
 
 **1440113361@qq.com**
 
+## 5、功能完善
+
+1. 引入SpringBoot依赖包实现简单的WEB项目
+2. 接入Mybatis，使用Mybatis自动生成器
+3. 定义项目的通用对象
+4. 定义用户模型（otp验证码、Metronic前端模板、用户注册、登录、检验规则）
