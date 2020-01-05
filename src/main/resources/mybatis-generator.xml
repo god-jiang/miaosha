@@ -39,14 +39,14 @@
 
 
         <!--生成对应表及类名-->
-        <table tableName="user_info" domainObjectName="UserDO" enableCountByExample="false"
+        <table tableName="sequence_info" domainObjectName="SequenceDO" enableCountByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"
                selectByExampleQueryId="false"></table>
         <!--enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
         <!--selectByExampleQueryId="false"></table>-->
-        <table tableName="user_password" domainObjectName="UserPasswordDO" enableCountByExample="false"
+<!--        <table tableName="user_password" domainObjectName="UserPasswordDO" enableCountByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"
-               selectByExampleQueryId="false"></table>
+               selectByExampleQueryId="false"></table>-->
         <!--enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
         <!--selectByExampleQueryId="false"></table>-->
 

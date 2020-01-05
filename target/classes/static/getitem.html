@@ -100,7 +100,7 @@
 		$("#createOrder").on("click", function() {
 			$.ajax({
 				type: "POST",
-				url: "http://localhost:8081/order/createorder",
+				url: "http://localhost:8090/order/createorder",
 				contentType: "application/x-www-form-urlencoded",
 				data: {
 					"itemId": g_itemVO.id,
