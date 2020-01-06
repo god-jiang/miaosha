@@ -7,7 +7,9 @@ import com.miaoshaproject.dataobject.ItemStockDO;
 import com.miaoshaproject.error.BusinessException;
 import com.miaoshaproject.error.EmBusinessError;
 import com.miaoshaproject.service.ItemService;
+import com.miaoshaproject.service.PromoService;
 import com.miaoshaproject.service.model.ItemModel;
+import com.miaoshaproject.service.model.PromoModel;
 import com.miaoshaproject.validator.ValidationResult;
 import com.miaoshaproject.validator.ValidatorImpl;
 import org.springframework.beans.BeanUtils;
@@ -35,6 +37,9 @@ public class ItemServiceImpl implements ItemService {
 
     @Autowired
     private ItemStockDOMapper itemStockDOMapper;
+
+    @Autowired
+    private PromoService promoService;
 
     private ItemDO convertItemDOFromItemModel(ItemModel itemModel) {
         if (itemModel == null) {
@@ -103,6 +108,11 @@ public class ItemServiceImpl implements ItemService {
         //将dataobject-->model
         ItemModel itemModel = this.convertModelFromDataObject(itemDO, itemStockDO);
 
+        //获取活动商品信息
+        PromoModel promoModel = promoService.getPromoByItemId(itemModel.getId());
+        if (promoModel != null && promoModel.getStatus().intValue() != 3) {
+            itemModel.setPromoModel(promoModel);
+        }
         return itemModel;
     }
 
@@ -118,10 +128,10 @@ public class ItemServiceImpl implements ItemService {
     @Transactional
     public boolean decreaseStock(Integer itemId, Integer amount) throws BusinessException {
         int affectedRow = itemStockDOMapper.decreaseStock(itemId, amount);
-        if(affectedRow>0){
+        if (affectedRow > 0) {
             //更新库存成功
             return true;
-        }else{
+        } else {
             //更新库存失败
             return false;
         }
@@ -130,6 +140,6 @@ public class ItemServiceImpl implements ItemService {
     @Override
     @Transactional
     public void increaseSales(Integer itemId, Integer amount) throws BusinessException {
-        itemDOMapper.increaseSales(itemId,amount);
+        itemDOMapper.increaseSales(itemId, amount);
     }
 }

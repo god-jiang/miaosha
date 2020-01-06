@@ -39,7 +39,7 @@
 
 
         <!--生成对应表及类名-->
-        <table tableName="sequence_info" domainObjectName="SequenceDO" enableCountByExample="false"
+        <table tableName="promo" domainObjectName="PromoDO" enableCountByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"
                selectByExampleQueryId="false"></table>
         <!--enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
