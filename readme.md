@@ -31,5 +31,5 @@ SpringBoot构建电商基础秒杀项目
 
 ## 6、结构图
 
-![](https://github.com/god-jiang/miaosha/结构图.jpg)
+![](https://github.com/god-jiang/miaosha/blob/master/结构图.jpg)
 
